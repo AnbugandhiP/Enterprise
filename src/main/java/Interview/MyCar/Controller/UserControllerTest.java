@@ -29,13 +29,13 @@ class UserControllerTest {
     private List<EndUser> userList;
 
     @BeforeEach
-    void setUp() {
+    void setUp() { // changed in uat2003
         userList = Arrays.asList(new EndUser(1L, "John"), new EndUser(2L, "Doe"));
         when(userService.addUser(anyList())).thenReturn(userList);
     }
 
     @Test
-    void testAddUser() {
+    void testAddUser() { 
         List<EndUser> result = userController.addUser(userList);
         assertEquals(2, result.size());
         assertEquals("John", result.get(0).getName());
