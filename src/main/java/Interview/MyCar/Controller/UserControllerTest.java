@@ -35,7 +35,7 @@ class UserControllerTest {
     }
 
     @Test
-    void testAddUser() {
+    void testAddUser() { 
         List<EndUser> result = userController.addUser(userList);
         assertEquals(2, result.size());
         assertEquals("John", result.get(0).getName());
