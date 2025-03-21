@@ -29,7 +29,7 @@ class UserControllerTest {
     private List<EndUser> userList;
 
     @BeforeEach
-    void setUp() { // changed in uat2003
+    void setUp() { 
         userList = Arrays.asList(new EndUser(1L, "John"), new EndUser(2L, "Doe"));
         when(userService.addUser(anyList())).thenReturn(userList);
     }

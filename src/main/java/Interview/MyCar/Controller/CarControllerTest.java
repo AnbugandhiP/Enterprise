@@ -37,29 +37,22 @@ class CarControllerTest {
 
     @Test
     void testAddCar() {
-        // Mock input
         List<Car> cars = Arrays.asList(new Car(1, "Toyota"), new Car(2, "Honda"));
         
-        // Mock service behavior
         when(carService.addCars(anyList())).thenReturn(cars);
 
-        // Call method
         List<Car> response = carController.addCar(cars);
 
-        // Validate
         assertEquals(2, response.size());
         assertEquals("Toyota", response.get(0).getName());
     }
 
     @Test
     void testRemoveCar() {
-        // Mock service behavior
         when(carService.removeCar(1)).thenReturn("Car removed");
 
-        // Call method
         String response = carController.removeCar(1);
 
-        // Validate
         assertEquals("Car removed", response);
     }
 }
